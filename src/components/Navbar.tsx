@@ -44,7 +44,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             </a>
             <button
               onClick={toggleDarkMode}
-              className="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="p-2 rounded-full text-slate-500 dark:text-slate-400 transition-colors active:bg-transparent focus:bg-transparent"
             >
               <span className="material-icons-outlined text-xl">
                 {darkMode ? "light_mode" : "dark_mode"}
@@ -54,7 +54,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
           <div className="md:hidden flex items-center gap-2">
             <button
               onClick={toggleDarkMode}
-              className="p-2 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors bg-white/70 dark:bg-slate-900/70"
+              className="p-2 rounded-xl text-slate-500 dark:text-slate-400 transition-colors active:bg-transparent focus:bg-transparent"
               aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
             >
               <span className="material-icons-outlined text-xl">
@@ -67,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               aria-label={isOpen ? "Close mobile menu" : "Open mobile menu"}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
-              className="text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white p-2 rounded-xl bg-white/70 dark:bg-slate-900/70"
+              className={`p-2 rounded-xl ${darkMode ? 'text-white' : 'text-black'} active:bg-transparent focus:bg-transparent`}
             >
               <span className="material-icons-outlined text-3xl">
                 {isOpen ? "close" : "menu"}
@@ -86,14 +86,14 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             <a
               href="#work"
               onClick={handleClose}
-              className="px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 active:bg-transparent focus:bg-transparent"
             >
               WORK
             </a>
             <a
               href="#about"
               onClick={handleClose}
-              className="px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 active:bg-transparent focus:bg-transparent"
             >
               ABOUT
             </a>
