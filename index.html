@@ -5,45 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alex Mora | Front-End Developer</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <!-- Tailwind is now installed locally; styles are imported via /index.css -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#7c3aed",
-              "primary-hover": "#6d28d9",
-              "background-light": "#f8fafc",
-              "background-dark": "#0f172a",
-              "surface-light": "#ffffff",
-              "surface-dark": "#1e293b",
-            },
-            fontFamily: {
-              sans: ["Inter", "sans-serif"],
-              display: ["Space Grotesk", "sans-serif"],
-            },
-            boxShadow: {
-              'glow': '0 0 20px rgba(124, 58, 237, 0.15)',
-            }
-          },
-        },
-      };
-    </script>
-    <style>
-      .perspective-1000 { perspective: 1000px; }
-      .rotate-y-12 { transform: rotateY(-12deg); }
-      .gradient-bg {
-        background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.1), transparent 40%),
-                    radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.05), transparent 40%);
-      }
-      .dark .gradient-bg {
-        background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.15), transparent 40%),
-                    radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.1), transparent 40%);
-      }
-    </style>
+    <!-- moved Tailwind config and custom small styles into tailwind.config.cjs and index.css -->
   <script type="importmap">
 {
   "imports": {
