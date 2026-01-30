@@ -41,7 +41,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <main>
+      <main id="main">
         <Hero />
         <TechStack />
         <Work id="work" />

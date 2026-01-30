@@ -9,14 +9,14 @@ export const Hero: React.FC = () => {
             <div className="inline-flex items-center px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase">
               Front-End Developer
             </div>
-            <h2 className="font-display text-5xl lg:text-7xl font-bold leading-tight text-slate-900 dark:text-white">
+            <h1 className="font-display text-5xl lg:text-7xl font-bold leading-tight text-slate-900 dark:text-white">
               Crafting Digital <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">
                 Experiences
               </span>{" "}
               with <br />
               Clean Code
-            </h2>
+            </h1>
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
               Specialized in building pixel-perfect, performant interfaces with
               modern frameworks and design systems. I turn complex problems into

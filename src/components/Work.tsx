@@ -57,6 +57,8 @@ export const Work: React.FC<{ id?: string }> = ({ id }) => {
                 <img 
                   src={project.imageUrl} 
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   className="object-cover w-full h-full opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-500"
                 />
               </div>
