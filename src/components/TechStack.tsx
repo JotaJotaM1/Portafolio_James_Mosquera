@@ -11,9 +11,15 @@ const techs = [
 
 export const TechStack: React.FC = () => {
   return (
-    <div className="w-full bg-white dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800 py-10">
+    <section
+      className="w-full bg-white dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800 py-10"
+      aria-labelledby="techstack-title"
+    >
       <div className="max-w-7xl mx-auto px-4 text-center mb-6">
-        <h3 className="text-xs font-semibold tracking-widest text-slate-500 uppercase">
+        <h3
+          id="techstack-title"
+          className="text-xs font-semibold tracking-widest text-slate-500 uppercase"
+        >
           Powering Experiences With
         </h3>
       </div>
@@ -39,6 +45,6 @@ export const TechStack: React.FC = () => {
           </span>
         ))}
       </div>
-    </div>
+    </section>
   );
 };

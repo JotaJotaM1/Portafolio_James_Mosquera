@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface Project {
+  id: string;
   title: string;
   description: string;
   tags: string[];
@@ -9,30 +10,28 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: "ecommerce-platform",
     title: "E-Commerce Platform",
     description: "Complete redesign increasing conversion by 42%",
     tags: ["REACT", "NEXT.JS", "TAILWIND"],
     imageUrl: "https://picsum.photos/seed/shop/800/450"
   },
   {
+    id: "analytics-dashboard",
     title: "Analytics Dashboard",
     description: "Real-time data visualization with 60fps performance",
     tags: ["TYPESCRIPT", "D3.JS"],
     imageUrl: "https://picsum.photos/seed/chart/800/450"
   },
   {
+    id: "design-system",
     title: "Design System",
     description: "Component library used across 15+ products",
     tags: ["STORYBOOK", "CSS-IN-JS"],
     imageUrl: "https://picsum.photos/seed/design/800/450"
   },
   {
-    title: "SaaS Application",
-    description: "Progressive web app with offline-first architecture",
-    tags: ["VUE.JS", "FIREBASE", "PWA"],
-    imageUrl: "https://picsum.photos/seed/saas/800/450"
-  },
-    {
+    id: "saas-application",
     title: "SaaS Application",
     description: "Progressive web app with offline-first architecture",
     tags: ["VUE.JS", "FIREBASE", "PWA"],
@@ -51,8 +50,8 @@ export const Work: React.FC<{ id?: string }> = ({ id }) => {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-10">
-          {projects.map((project, idx) => (
-            <div key={idx} className="group relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-glow transition-all duration-300 hover:-translate-y-2">
+          {projects.map((project) => (
+            <div key={project.id} className="group relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-glow transition-all duration-300 hover:-translate-y-2">
               <div className="aspect-video bg-slate-200 dark:bg-slate-900 overflow-hidden relative">
                 <img 
                   src={project.imageUrl} 

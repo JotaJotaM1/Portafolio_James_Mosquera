@@ -2,7 +2,7 @@ import React from 'react';
 
 export const About: React.FC<{ id?: string }> = ({ id }) => {
   return (
-    <section id={id} className="py-24 overflow-hidden p">
+    <section id={id} className="py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
