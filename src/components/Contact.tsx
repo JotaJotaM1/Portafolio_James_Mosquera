@@ -124,7 +124,7 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
         <div className="mt-16 text-center space-y-6">
           <div className="inline-flex items-center gap-3 text-2xl md:text-4xl font-bold text-primary hover:text-primary-hover transition-colors">
             <span className="material-icons-outlined">mail</span>
-            <a href="mailto:hello@alexmora.dev">hello@alexmora.dev</a>
+            <a href="mailto:johnjamesmosquera3@gmail.com">johnjamesmosquera3@gmail.com</a>
           </div>
           <div className="flex justify-center gap-8 pt-4">
             <a href="#" className="text-slate-400 hover:text-primary transition-all"><span className="material-icons-outlined text-3xl">alternate_email</span></a>
