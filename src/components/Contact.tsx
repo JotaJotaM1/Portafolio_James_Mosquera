@@ -14,11 +14,11 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
 
   const validate = () => {
     const next: { [k: string]: string } = {};
-    if (!form.name.trim()) next.name = 'Este campo es obligatorio.';
-    if (!form.email.trim()) next.email = 'Este campo es obligatorio.';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) next.email = 'Introduce un correo válido.';
-    if (!form.subject.trim()) next.subject = 'Este campo es obligatorio.';
-    if (!form.message.trim()) next.message = 'Este campo es obligatorio.';
+    if (!form.name.trim()) next.name = 'This field is required.';
+    if (!form.email.trim()) next.email = 'This field is required.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) next.email = 'Please enter a valid email address.';
+    if (!form.subject.trim()) next.subject = 'This field is required.';
+    if (!form.message.trim()) next.message = 'This field is required.';
     return next;
   };
 
@@ -27,7 +27,7 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
     const next = validate();
     setErrors(next);
     if (Object.keys(next).length === 0) {
-      setStatusMessage('Mensaje enviado (demo). Gracias — te contactaré pronto.');
+      setStatusMessage('Message sent (demo). Thank you — I will get back to you soon.');
       // Aquí puedes enviar `form` a tu API/servicio.
       setForm({ name: '', email: '', subject: '', message: '' });
     }
@@ -127,9 +127,33 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
             <a href="mailto:johnjamesmosquera3@gmail.com">johnjamesmosquera3@gmail.com</a>
           </div>
           <div className="flex justify-center gap-8 pt-4">
-            <a href="#" className="text-slate-400 hover:text-primary transition-all"><span className="material-icons-outlined text-3xl">alternate_email</span></a>
-            <a href="#" className="text-slate-400 hover:text-primary transition-all"><span className="material-icons-outlined text-3xl">smart_display</span></a>
-            <a href="#" className="text-slate-400 hover:text-primary transition-all"><span className="material-icons-outlined text-3xl">language</span></a>
+            <a
+              href="https://x.com/JotaJotaM1"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="X / Twitter"
+              className="text-slate-400 hover:text-primary transition-all"
+            >
+              <span className="material-icons-outlined text-3xl">alternate_email</span>
+            </a>
+            <a
+              href="https://github.com/JotaJotaM1"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="text-slate-400 hover:text-primary transition-all"
+            >
+              <span className="material-icons-outlined text-3xl">smart_display</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/john-james-mosquera-rozo-4b22bb229/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="text-slate-400 hover:text-primary transition-all"
+            >
+              <span className="material-icons-outlined text-3xl">language</span>
+            </a>
           </div>
         </div>
       </div>

@@ -14,19 +14,25 @@ export const Footer: React.FC = () => {
         </div>
         <div className="flex space-x-8">
           <a
-            href="#"
+            href="https://github.com/JotaJotaM1"
+            target="_blank"
+            rel="noreferrer"
             className="text-slate-400 hover:text-primary transition-colors text-xs font-bold tracking-widest"
           >
             GITHUB
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/john-james-mosquera-rozo-4b22bb229/"
+            target="_blank"
+            rel="noreferrer"
             className="text-slate-400 hover:text-primary transition-colors text-xs font-bold tracking-widest"
           >
             LINKEDIN
           </a>
           <a
-            href="#"
+            href="https://x.com/JotaJotaM1"
+            target="_blank"
+            rel="noreferrer"
             className="text-slate-400 hover:text-primary transition-colors text-xs font-bold tracking-widest"
           >
             TWITTER

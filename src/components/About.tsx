@@ -19,13 +19,26 @@ export const About: React.FC<{ id?: string }> = ({ id }) => {
               </p>
             </div>
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href="#" className="inline-flex items-center px-6 py-3 border border-slate-900 dark:border-white text-sm font-bold rounded-lg text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all">
+              <a
+                href="https://github.com/JotaJotaM1"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center px-6 py-3 border border-slate-900 dark:border-white text-sm font-bold rounded-lg text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all"
+              >
                 <span className="material-icons-outlined mr-2 text-sm">code</span> GITHUB
               </a>
-              <a href="#" className="inline-flex items-center px-6 py-3 border border-slate-900 dark:border-white text-sm font-bold rounded-lg text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all">
+              <a
+                href="https://www.linkedin.com/in/john-james-mosquera-rozo-4b22bb229/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center px-6 py-3 border border-slate-900 dark:border-white text-sm font-bold rounded-lg text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all"
+              >
                 <span className="material-icons-outlined mr-2 text-sm">work</span> LINKEDIN
               </a>
-              <a href="#" className="inline-flex items-center px-6 py-3 border border-transparent text-sm font-bold rounded-lg text-white bg-primary hover:bg-primary-hover shadow-lg shadow-primary/30 transition-all">
+              <a
+                href="/james-mosquera-cv.pdf"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-sm font-bold rounded-lg text-white bg-primary hover:bg-primary-hover shadow-lg shadow-primary/30 transition-all"
+              >
                 <span className="material-icons-outlined mr-2 text-sm">download</span> DOWNLOAD CV
               </a>
             </div>
