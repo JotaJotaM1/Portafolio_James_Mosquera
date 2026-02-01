@@ -1,20 +1,63 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# James Mosquera — Front-End Developer Portfolio
 
-# Run and deploy your AI Studio app
+Portfolio personal para presentar proyectos, stack técnico y contacto profesional. Enfocado en UI pixel-perfect, performance y accesibilidad.
 
-This contains everything you need to run your app locally.
+## Demo
 
-View your app in AI Studio: https://ai.studio/apps/drive/1d2yqQd79vEUa_DVfynt4tlDQbqmsUuWs
+https://portafolio-james-mosquera.vercel.app
 
-## Run Locally
+## Capturas
 
-**Prerequisites:**  Node.js
+![Open Graph Preview](/og-v2.jpg)
 
+## Tecnologías
 
-1. Install dependencies:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- PostCSS
+
+## Instalación y uso local
+
+**Requisitos:** Node.js
+
+1. Instala dependencias:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. Inicia el entorno local:
    `npm run dev`
+
+## Scripts disponibles
+
+- `npm run dev` — servidor de desarrollo
+- `npm run build` — build de producción
+- `npm run preview` — preview del build
+
+## Variables de entorno
+
+Crear `.env.production` (o variables en Vercel):
+
+- `VITE_SITE_URL` = URL pública del sitio (sin slash final)
+
+## Estructura de carpetas (resumen)
+
+```
+public/
+src/
+  components/
+  assets/
+```
+
+## Contribución
+
+Este proyecto es personal. Si deseas proponer mejoras, abre un issue.
+
+## Licencia
+
+Todos los derechos reservados.
+
+## Contacto
+
+- Email: johnjamesmosquera3@gmail.com
+- LinkedIn: https://www.linkedin.com/in/john-james-mosquera-rozo-4b22bb229/
+- GitHub: https://github.com/JotaJotaM1
