@@ -8,7 +8,7 @@ https://portafolio-james-mosquera.vercel.app
 
 ## Capturas
 
-![Open Graph Preview](/og-v2.jpg)
+![Open Graph Preview](./public/og-v2.jpg)
 
 ## Tecnologías
 
