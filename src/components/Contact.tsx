@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from "react-i18next";
 
 export const Contact: React.FC<{ id?: string }> = ({ id }) => {
@@ -23,6 +23,11 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
     if (!form.message.trim()) next.message = t('contact.validation.required');
     return next;
   };
+
+  useEffect(() => {
+    if (Object.keys(errors).length === 0) return;
+    setErrors(validate());
+  }, [t]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
