@@ -55,19 +55,22 @@ export const About: React.FC<{ id?: string }> = ({ id }) => {
                     <div className="text-2xl md:text-3xl font-bold">Barcelona, Spain</div>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-10">
-                  <div>
-                    <div className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Experience</div>
-                    <div className="text-4xl md:text-5xl font-display font-bold text-primary">6+ <span className="text-lg text-slate-500 font-sans">Years</span></div>
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Projects</div>
-                    <div className="text-4xl md:text-5xl font-display font-bold">50+</div>
-                  </div>
-                </div>
-                <div>
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Happy Clients</div>
-                  <div className="text-4xl md:text-5xl font-display font-bold text-primary">35+</div>
+                <div className="grid gap-8 sm:grid-cols-3">
+                  {[
+                    { label: "Experience", value: "3+", accent: true, suffix: "Years" },
+                    { label: "Projects", value: "50+" },
+                    { label: "Happy Clients", value: "35+", accent: true }
+                  ].map((stat) => (
+                    <div key={stat.label}>
+                      <div className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">{stat.label}</div>
+                      <div className={`inline-flex items-baseline gap-2 text-4xl md:text-5xl font-display font-bold ${stat.accent ? "text-primary" : ""}`}>
+                        <span>{stat.value}</span>
+                        {stat.suffix && (
+                          <span className="text-lg text-slate-500 font-sans">{stat.suffix}</span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

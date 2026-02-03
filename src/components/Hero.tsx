@@ -5,8 +5,8 @@ export const Hero: React.FC = () => {
     <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          <div className="space-y-8">
-            <div className="inline-flex items-center px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase">
+          <div className="space-y-8 md:text-center lg:text-left">
+            <div className="inline-flex items-center px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase md:mx-auto lg:mx-0">
               Front-End Developer
             </div>
             <h1 className="font-display text-5xl lg:text-7xl font-bold leading-tight text-slate-900 dark:text-white">
@@ -17,12 +17,12 @@ export const Hero: React.FC = () => {
               with <br />
               Clean Code
             </h1>
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed md:mx-auto lg:mx-0">
               Specialized in building pixel-perfect, performant interfaces with
               modern frameworks and design systems. I turn complex problems into
               simple, beautiful, and intuitive designs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 md:justify-center lg:justify-start">
               <a
                 href="#work"
                 className="inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-medium rounded-xl text-white bg-primary hover:bg-primary-hover shadow-glow transition-all duration-200 transform hover:-translate-y-1"
