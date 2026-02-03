@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface NavbarProps {
   darkMode: boolean;
@@ -6,10 +7,16 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => setIsOpen((prev) => !prev);
   const handleClose = () => setIsOpen(false);
+  const isSpanish = i18n.language?.startsWith("es");
+  const handleLanguageChange = (lang: "en" | "es") => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem("lang", lang);
+  };
 
   return (
     <nav className="fixed w-full z-50 top-0 border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md">
@@ -19,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             <span className="material-icons-outlined text-primary text-3xl" aria-hidden>
               code
             </span>
-            <a href="/" aria-label="Home - James Mosquera" className="font-display font-bold text-2xl tracking-tight text-gray-900 dark:text-white">
+            <a href="/" aria-label="Home - James Mosquera" className="hidden md:inline-block font-display font-bold text-2xl tracking-tight text-gray-900 dark:text-white">
               James Mosquera
             </a>
           </div>
@@ -28,23 +35,44 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               className="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
               href="#work"
             >
-              WORK
+              {t("nav.work")}
             </a>
             <a
               className="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
               href="#about"
             >
-              ABOUT
+              {t("nav.about")}
             </a>
             <a
               className="px-5 py-2.5 rounded-full bg-primary text-white text-sm font-medium hover:bg-primary-hover transition-colors shadow-lg shadow-primary/30"
               href="#contact"
             >
-              CONTACT
+              {t("nav.contact")}
             </a>
+            <div
+              role="group"
+              aria-label={t("language.label")}
+              className="flex items-center rounded-full border border-slate-200 dark:border-slate-700 p-1 transition-colors duration-200 ease-out"
+            >
+              <button
+                type="button"
+                onClick={() => handleLanguageChange("en")}
+                className={`px-3 py-1.5 text-xs font-bold tracking-widest rounded-full transition-all duration-200 ease-out ${!isSpanish ? "bg-primary text-white shadow-sm" : "text-slate-500 dark:text-slate-400"}`}
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                onClick={() => handleLanguageChange("es")}
+                className={`px-3 py-1.5 text-xs font-bold tracking-widest rounded-full transition-all duration-200 ease-out ${isSpanish ? "bg-primary text-white shadow-sm" : "text-slate-500 dark:text-slate-400"}`}
+              >
+                ES
+              </button>
+            </div>
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full text-slate-500 dark:text-slate-400 transition-colors active:bg-transparent focus:bg-transparent"
+              aria-label={darkMode ? t("theme.light") : t("theme.dark")}
             >
               <span className="material-icons-outlined text-xl">
                 {darkMode ? "light_mode" : "dark_mode"}
@@ -55,12 +83,32 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-xl text-slate-500 dark:text-slate-400 transition-colors active:bg-transparent focus:bg-transparent"
-              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+              aria-label={darkMode ? t("theme.light") : t("theme.dark")}
             >
               <span className="material-icons-outlined text-xl">
                 {darkMode ? "light_mode" : "dark_mode"}
               </span>
             </button>
+            <div
+              role="group"
+              aria-label={t("language.label")}
+              className="flex items-center rounded-xl border border-slate-200 dark:border-slate-700 p-1 transition-colors duration-200 ease-out"
+            >
+              <button
+                type="button"
+                onClick={() => handleLanguageChange("en")}
+                className={`px-3 py-1.5 text-xs font-bold tracking-widest rounded-lg transition-all duration-200 ease-out ${!isSpanish ? "bg-primary text-white shadow-sm" : "text-slate-500 dark:text-slate-400"}`}
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                onClick={() => handleLanguageChange("es")}
+                className={`px-3 py-1.5 text-xs font-bold tracking-widest rounded-lg transition-all duration-200 ease-out ${isSpanish ? "bg-primary text-white shadow-sm" : "text-slate-500 dark:text-slate-400"}`}
+              >
+                ES
+              </button>
+            </div>
             <button
               type="button"
               onClick={handleToggle}
@@ -88,21 +136,21 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               onClick={handleClose}
               className="px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 active:bg-transparent focus:bg-transparent"
             >
-              WORK
+              {t("nav.work")}
             </a>
             <a
               href="#about"
               onClick={handleClose}
               className="px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 active:bg-transparent focus:bg-transparent"
             >
-              ABOUT
+              {t("nav.about")}
             </a>
             <a
               href="#contact"
               onClick={handleClose}
               className="inline-flex self-start px-4 py-3 rounded-xl text-sm font-semibold text-white bg-primary hover:bg-primary-hover transition-colors shadow-lg shadow-primary/30"
             >
-              CONTACT
+              {t("nav.contact")}
             </a>
           </div>
         </div>

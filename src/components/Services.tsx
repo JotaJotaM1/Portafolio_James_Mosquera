@@ -1,49 +1,26 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const services = [
-  {
-    icon: "code",
-    title: "UI Implementation",
-    desc: "Pixel-perfect conversion from designs to production-ready code with attention to detail.",
-  },
-  {
-    icon: "layers",
-    title: "Design Systems",
-    desc: "Building scalable component libraries and design tokens that ensure consistency.",
-  },
-  {
-    icon: "speed",
-    title: "Performance",
-    desc: "Optimizing load times, rendering performance, and Core Web Vitals for speed.",
-  },
-  {
-    icon: "search",
-    title: "SEO Basics",
-    desc: "Implementing semantic HTML and structured data for better search visibility.",
-    
-  },
-  {
-    icon: "accessibility_new",
-    title: "Accessibility",
-    desc: "WCAG-compliant interfaces with screen reader support and inclusive design.",
-  },
-  {
-    icon: "groups",
-    title: "Collaboration",
-    desc: "Working closely with designers and back-end teams to deliver cohesive products.",
-  },
+  { icon: "code", titleKey: "services.items.uiTitle", descKey: "services.items.uiDesc" },
+  { icon: "layers", titleKey: "services.items.dsTitle", descKey: "services.items.dsDesc" },
+  { icon: "speed", titleKey: "services.items.perfTitle", descKey: "services.items.perfDesc" },
+  { icon: "search", titleKey: "services.items.seoTitle", descKey: "services.items.seoDesc" },
+  { icon: "accessibility_new", titleKey: "services.items.a11yTitle", descKey: "services.items.a11yDesc" },
+  { icon: "groups", titleKey: "services.items.collabTitle", descKey: "services.items.collabDesc" },
 ];
 
 export const Services: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <section className="py-24 bg-slate-50 dark:bg-slate-900/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl font-bold text-slate-900 dark:text-white mb-4">
-            Services & Skills
+            {t("services.title")}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 uppercase tracking-widest text-xs font-bold">
-            What I bring to your project
+            {t("services.subtitle")}
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -58,10 +35,10 @@ export const Services: React.FC = () => {
                 </span>
               </div>
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
-                {s.title}
+                {t(s.titleKey)}
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                {s.desc}
+                {t(s.descKey)}
               </p>
             </div>
           ))}

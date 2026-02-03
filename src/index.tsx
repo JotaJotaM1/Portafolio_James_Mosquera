@@ -2,6 +2,7 @@ import React from "react";
 import "./index.css";
 import ReactDOM from "react-dom/client";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import "./i18n";
 import App from "./App";
 
 const rootElement = document.getElementById("root");

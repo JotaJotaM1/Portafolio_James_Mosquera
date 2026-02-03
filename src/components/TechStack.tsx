@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const techs = [
   { name: "React", icon: "/images/react.svg" },
@@ -16,6 +17,7 @@ const techs = [
 ];
 
 export const TechStack: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <section
       className="w-full bg-white dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800 py-10"
@@ -26,7 +28,7 @@ export const TechStack: React.FC = () => {
           id="techstack-title"
           className="text-xs font-semibold tracking-widest text-slate-500 uppercase"
         >
-          Powering Experiences With
+          {t("techstack.title")}
         </h3>
       </div>
 

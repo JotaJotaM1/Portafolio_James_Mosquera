@@ -1,39 +1,39 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export const Hero: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           <div className="space-y-8 md:text-center lg:text-left">
             <div className="inline-flex items-center px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase md:mx-auto lg:mx-0">
-              Front-End Developer
+              {t("hero.badge")}
             </div>
             <h1 className="font-display text-5xl lg:text-7xl font-bold leading-tight text-slate-900 dark:text-white">
-              Crafting Digital <br />
+              {t("hero.title.line1")} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">
-                Experiences
+                {t("hero.title.emphasis")}
               </span>{" "}
-              with <br />
-              Clean Code
+              {t("hero.title.line2")} <br />
+              {t("hero.title.line3")}
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed md:mx-auto lg:mx-0">
-              Specialized in building pixel-perfect, performant interfaces with
-              modern frameworks and design systems. I turn complex problems into
-              simple, beautiful, and intuitive designs.
+              {t("hero.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4 md:justify-center lg:justify-start">
               <a
                 href="#work"
                 className="inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-medium rounded-xl text-white bg-primary hover:bg-primary-hover shadow-glow transition-all duration-200 transform hover:-translate-y-1"
               >
-                VIEW WORK
+                {t("hero.ctaWork")}
               </a>
               <a
                 href="#contact"
                 className="inline-flex justify-center items-center px-8 py-4 border border-slate-300 dark:border-slate-700 text-base font-medium rounded-xl text-slate-700 dark:text-slate-300 bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200"
               >
-                CONTACT ME
+                {t("hero.ctaContact")}
               </a>
             </div>
           </div>
@@ -58,7 +58,7 @@ export const Hero: React.FC = () => {
                 <div className="w-2/3 h-32 bg-slate-900 rounded-xl relative overflow-hidden p-4 flex flex-col justify-between">
                   <div className="flex justify-between items-start">
                     <div className="text-[10px] text-slate-400 uppercase tracking-wider">
-                      Project Status
+                      {t("hero.projectStatus")}
                     </div>
                     <span className="material-icons-outlined text-white text-sm">
                       more_horiz

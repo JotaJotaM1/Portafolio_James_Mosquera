@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useTranslation } from "react-i18next";
 
 export const Contact: React.FC<{ id?: string }> = ({ id }) => {
+  const { t } = useTranslation();
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [errors, setErrors] = useState<{ [k: string]: string }>({});
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
@@ -14,11 +16,11 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
 
   const validate = () => {
     const next: { [k: string]: string } = {};
-    if (!form.name.trim()) next.name = 'This field is required.';
-    if (!form.email.trim()) next.email = 'This field is required.';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) next.email = 'Please enter a valid email address.';
-    if (!form.subject.trim()) next.subject = 'This field is required.';
-    if (!form.message.trim()) next.message = 'This field is required.';
+    if (!form.name.trim()) next.name = t('contact.validation.required');
+    if (!form.email.trim()) next.email = t('contact.validation.required');
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) next.email = t('contact.validation.email');
+    if (!form.subject.trim()) next.subject = t('contact.validation.required');
+    if (!form.message.trim()) next.message = t('contact.validation.required');
     return next;
   };
 
@@ -27,7 +29,7 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
     const next = validate();
     setErrors(next);
     if (Object.keys(next).length === 0) {
-      setStatusMessage('Message sent (demo). Thank you — I will get back to you soon.');
+      setStatusMessage(t('contact.status'));
       // Aquí puedes enviar `form` a tu API/servicio.
       setForm({ name: '', email: '', subject: '', message: '' });
     }
@@ -37,9 +39,9 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
     <section id={id} className="py-24 bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white uppercase mb-4 tracking-tight">Let's Work Together</h2>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white uppercase mb-4 tracking-tight">{t('contact.title')}</h2>
           <p className="text-slate-600 dark:text-slate-400 text-lg">
-            Have a project in mind or just want to say hi? Feel free to send me a message.
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -48,11 +50,10 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
             <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-primary/10 blur-2xl"></div>
             <div className="relative">
               <h3 className="text-2xl md:text-3xl font-display font-bold text-slate-900 dark:text-white mb-3">
-                Ready to bring your next idea to life?
+                {t('contact.ctaTitle')}
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-2xl">
-                I help brands and startups build fast, accessible, and beautiful web experiences.
-                Tell me about your project and I’ll get back to you quickly.
+                {t('contact.ctaBody')}
               </p>
             </div>
           </div>
@@ -62,12 +63,12 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
           <form className="space-y-8" onSubmit={handleSubmit} noValidate>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label htmlFor="contact-name" className="block text-xs font-bold uppercase tracking-widest text-slate-500">Name <span className="text-primary">*</span></label>
+                <label htmlFor="contact-name" className="block text-xs font-bold uppercase tracking-widest text-slate-500">{t('contact.form.name')} <span className="text-primary">*</span></label>
                 <input 
                   id="contact-name"
                   name="name"
                   type="text" 
-                  placeholder="John Doe"
+                  placeholder={t('contact.form.namePlaceholder')}
                   required
                   value={form.name}
                   onChange={handleChange}
@@ -78,12 +79,12 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
                 {errors.name && <p id="error-contact-name" className="text-sm text-red-500 mt-1">{errors.name}</p>}
               </div>
               <div className="space-y-2">
-                <label htmlFor="contact-email" className="block text-xs font-bold uppercase tracking-widest text-slate-500">Email <span className="text-primary">*</span></label>
+                <label htmlFor="contact-email" className="block text-xs font-bold uppercase tracking-widest text-slate-500">{t('contact.form.email')} <span className="text-primary">*</span></label>
                 <input 
                   id="contact-email"
                   name="email"
                   type="email" 
-                  placeholder="john@example.com"
+                  placeholder={t('contact.form.emailPlaceholder')}
                   required
                   value={form.email}
                   onChange={handleChange}
@@ -95,12 +96,12 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
               </div>
             </div>
             <div className="space-y-2">
-              <label htmlFor="contact-subject" className="block text-xs font-bold uppercase tracking-widest text-slate-500">Subject <span className="text-primary">*</span></label>
+              <label htmlFor="contact-subject" className="block text-xs font-bold uppercase tracking-widest text-slate-500">{t('contact.form.subject')} <span className="text-primary">*</span></label>
               <input 
                 id="contact-subject"
                 name="subject"
                 type="text" 
-                placeholder="Project Inquiry"
+                placeholder={t('contact.form.subjectPlaceholder')}
                 required
                 value={form.subject}
                 onChange={handleChange}
@@ -111,12 +112,12 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
               {errors.subject && <p id="error-contact-subject" className="text-sm text-red-500 mt-1">{errors.subject}</p>}
             </div>
             <div className="space-y-2">
-              <label htmlFor="contact-message" className="block text-xs font-bold uppercase tracking-widest text-slate-500">Message <span className="text-primary">*</span></label>
+              <label htmlFor="contact-message" className="block text-xs font-bold uppercase tracking-widest text-slate-500">{t('contact.form.message')} <span className="text-primary">*</span></label>
               <textarea 
                 id="contact-message"
                 name="message"
                 rows={5}
-                placeholder="Tell me about your project..."
+                placeholder={t('contact.form.messagePlaceholder')}
                 required
                 value={form.message}
                 onChange={handleChange}
@@ -127,7 +128,7 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
               {errors.message && <p id="error-contact-message" className="text-sm text-red-500 mt-1">{errors.message}</p>}
             </div>
             <button type="submit" className="w-full py-5 px-6 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1 active:scale-95">
-              SEND MESSAGE
+              {t('contact.form.submit')}
             </button>
 
             {statusMessage && (

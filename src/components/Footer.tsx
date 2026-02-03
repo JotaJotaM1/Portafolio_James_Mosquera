@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export const Footer: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
@@ -40,7 +42,7 @@ export const Footer: React.FC = () => {
         </div>
         <div>
           <p className="text-xs text-slate-500">
-            © 2026 James Mosquera. All rights reserved.
+            {t("footer.rights")}
           </p>
         </div>
       </div>
