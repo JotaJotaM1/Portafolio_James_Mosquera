@@ -3,9 +3,15 @@ import React from "react";
 const techs = [
   { name: "React", icon: "/images/react.svg" },
   { name: "Next.js", icon: "/images/nextjs.svg" },
+  { name: "Astro", icon: "/images/astro-svgrepo-com.svg" },
+  { name: "Vite", icon: "/images/vite-svgrepo-com.svg" },
   { name: "TypeScript", icon: "/images/typescript.svg" },
-  { name: "Tailwind", icon: "/images/tailwind.svg" },
+  { name: "Tailwind CSS", icon: "/images/tailwind.svg" },
+  { name: "HTML5", icon: "/images/html-5-svgrepo-com.svg" },
+  { name: "SEO", icon: "/images/seo-3-svgrepo-com.svg" },
+  { name: "Web Performance", icon: "/images/efficiency-performance-speedometer-web-performance-speed-dashboard-svgrepo-com.svg" },
   { name: "Node.js", icon: "/images/nodejs.svg" },
+  { name: "Git / GitHub", icon: "/images/github-svgrepo-com.svg" },
   { name: "Figma", icon: "/images/figma.svg" },
 ];
 
@@ -15,7 +21,7 @@ export const TechStack: React.FC = () => {
       className="w-full bg-white dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800 py-10"
       aria-labelledby="techstack-title"
     >
-      <div className="max-w-7xl mx-auto px-4 text-center mb-6">
+      <div className="max-w-7xl mx-auto px-4 text-center mb-10">
         <h3
           id="techstack-title"
           className="text-xs font-semibold tracking-widest text-slate-500 uppercase"
@@ -24,26 +30,27 @@ export const TechStack: React.FC = () => {
         </h3>
       </div>
 
-      <div className="flex justify-center gap-6 sm:gap-12 flex-wrap px-4">
-        {techs.map((tech) => (
-          <span
-            key={tech.name}
-            className="px-5 py-2.5 bg-slate-100 dark:bg-slate-800 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2 transition-all duration-300 cursor-default"
-          >
-            {/* Icono SVG real a color */}
-            <img
-              src={tech.icon}
-              alt={`${tech.name} logo`}
-              className="h-5 w-5 sm:h-6 sm:w-6"
-              loading="lazy"
-              decoding="async"
-            />
-
-            <span className="tracking-wide">
-              {tech.name.toUpperCase()}
+      <div className="relative overflow-hidden px-4 tech-marquee-mask max-w-5xl mx-auto">
+        <div className="tech-marquee gap-6 sm:gap-10">
+          {[...techs, ...techs].map((tech, index) => (
+            <span
+              key={`${tech.name}-${index}`}
+              className="px-5 py-2.5 bg-slate-100 dark:bg-slate-800 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2 transition-all duration-300 cursor-default shrink-0"
+              aria-hidden={index >= techs.length}
+            >
+              <img
+                src={tech.icon}
+                alt={`${tech.name} logo`}
+                className="h-7 w-7 sm:h-8 sm:w-8"
+                loading="lazy"
+                decoding="async"
+              />
+              <span className="tracking-wide">
+                {tech.name.toUpperCase()}
+              </span>
             </span>
-          </span>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

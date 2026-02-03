@@ -42,6 +42,21 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
             Have a project in mind or just want to say hi? Feel free to send me a message.
           </p>
         </div>
+
+        <div className="mb-12">
+          <div className="relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 md:p-10 shadow-xl">
+            <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-primary/10 blur-2xl"></div>
+            <div className="relative">
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-slate-900 dark:text-white mb-3">
+                Ready to bring your next idea to life?
+              </h3>
+              <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-2xl">
+                I help brands and startups build fast, accessible, and beautiful web experiences.
+                Tell me about your project and I’ll get back to you quickly.
+              </p>
+            </div>
+          </div>
+        </div>
         
         <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
           <form className="space-y-8" onSubmit={handleSubmit} noValidate>
@@ -121,41 +136,6 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
           </form>
         </div>
 
-        <div className="mt-16 text-center space-y-6">
-          <div className="inline-flex items-center gap-3 text-base sm:text-lg md:text-lg font-bold text-primary hover:text-primary-hover transition-colors">
-            <span className="material-icons-outlined">mail</span>
-            <a href="mailto:johnjamesmosquera3@gmail.com">johnjamesmosquera3@gmail.com</a>
-          </div>
-          <div className="flex justify-center gap-8 pt-4">
-            <a
-              href="https://x.com/JotaJotaM1"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="X / Twitter"
-              className="text-slate-400 hover:text-primary transition-all"
-            >
-              <span className="material-icons-outlined text-3xl">alternate_email</span>
-            </a>
-            <a
-              href="https://github.com/JotaJotaM1"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-              className="text-slate-400 hover:text-primary transition-all"
-            >
-              <span className="material-icons-outlined text-3xl">smart_display</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/john-james-mosquera-rozo-4b22bb229/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              className="text-slate-400 hover:text-primary transition-all"
-            >
-              <span className="material-icons-outlined text-3xl">language</span>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
