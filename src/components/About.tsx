@@ -1,6 +1,56 @@
-import React from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 export const About: React.FC<{ id?: string }> = ({ id }) => {
+  const statsRef = useRef<HTMLDivElement | null>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [counts, setCounts] = useState({ experience: 0, projects: 0, clients: 0 });
+
+  const stats = useMemo(
+    () => [
+      { key: 'experience', label: 'Experience', value: 3, suffix: 'Years', accent: true },
+      { key: 'projects', label: 'Projects', value: 50, suffix: 'Plus', accent: false },
+      { key: 'clients', label: 'Happy Clients', value: 35, suffix: 'Plus', accent: true }
+    ],
+    []
+  );
+
+  useEffect(() => {
+    if (!statsRef.current || hasAnimated) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      setCounts({ experience: 3, projects: 50, clients: 35 });
+      setHasAnimated(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0].isIntersecting) return;
+        const start = performance.now();
+        const duration = 1200;
+        const targets = { experience: 3, projects: 50, clients: 35 };
+
+        const tick = (now: number) => {
+          const progress = Math.min((now - start) / duration, 1);
+          setCounts({
+            experience: Math.floor(targets.experience * progress),
+            projects: Math.floor(targets.projects * progress),
+            clients: Math.floor(targets.clients * progress)
+          });
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+
+        requestAnimationFrame(tick);
+        setHasAnimated(true);
+        observer.disconnect();
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(statsRef.current);
+    return () => observer.disconnect();
+  }, [hasAnimated]);
   return (
     <section id={id} className="py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,13 +59,10 @@ export const About: React.FC<{ id?: string }> = ({ id }) => {
             <h2 className="font-display text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white uppercase tracking-tight">About Me</h2>
             <div className="space-y-6 text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
               <p>
-                I'm a Front-End Developer based in Barcelona, specializing in building exceptional digital experiences with modern web technologies.
+                I'm a Front-End Developer based in Barcelona, focused on building clean, accessible, high-performance web experiences with modern technologies.
               </p>
               <p>
-                With 6+ years of experience, I've worked with startups and enterprises to deliver high-performance web applications that users love. My focus is on clean code, accessibility, and seamless UI/UX collaboration.
-              </p>
-              <p>
-                When I'm not coding, you'll find me exploring new design trends, contributing to open-source projects, or mentoring junior developers.
+                I work with startups and small teams to deliver fast, well-structured applications with strong attention to UI/UX, performance, and SEO. Outside of coding, I explore front-end trends and refine my skills through personal projects.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 pt-4">
@@ -55,18 +102,18 @@ export const About: React.FC<{ id?: string }> = ({ id }) => {
                     <div className="text-2xl md:text-3xl font-bold">Barcelona, Spain</div>
                   </div>
                 </div>
-                <div className="grid gap-8 sm:grid-cols-3">
-                  {[
-                    { label: "Experience", value: "3+", accent: true, suffix: "Years" },
-                    { label: "Projects", value: "50+" },
-                    { label: "Happy Clients", value: "35+", accent: true }
-                  ].map((stat) => (
+                <div className="grid gap-8 sm:grid-cols-3" ref={statsRef}>
+                  {stats.map((stat) => (
                     <div key={stat.label}>
                       <div className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">{stat.label}</div>
                       <div className={`inline-flex items-baseline gap-2 text-4xl md:text-5xl font-display font-bold ${stat.accent ? "text-primary" : ""}`}>
-                        <span>{stat.value}</span>
-                        {stat.suffix && (
-                          <span className="text-lg text-slate-500 font-sans">{stat.suffix}</span>
+                        {stat.suffix === 'Plus' ? (
+                          <span>{counts[stat.key as keyof typeof counts]}+</span>
+                        ) : (
+                          <span>{counts[stat.key as keyof typeof counts]}</span>
+                        )}
+                        {stat.suffix === 'Years' && (
+                          <span className="text-lg text-slate-500 font-sans">Years</span>
                         )}
                       </div>
                     </div>

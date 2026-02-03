@@ -28,8 +28,8 @@ const projects: Project[] = [
   },
   {
     id: "menu-quecarajos",
-    title: "Menú Que Carajos",
-    description: "Restaurant menu web experience",
+    title: "Restaurant Menu",
+    description: "QR-based restaurant menu for mobile devices",
     tags: ["HTML", "CSS", "JAVASCRIPT", "RESPONSIVE", "FLEXBOX", "CSS GRID", "SEO"],
     imageUrl: "/images/menu-quecarajos.vercel_home.webp",
     url: "https://menu-quecarajos.vercel.app/"
