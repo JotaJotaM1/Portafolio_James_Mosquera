@@ -1,22 +1,82 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/inter-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/inter-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/inter-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/inter-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/space-grotesk-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/space-grotesk-latin-700-normal.woff2") format("woff2");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Custom utilities moved from index.html */
-.perspective-1000 { perspective: 1000px; }
-.rotate-y-12 { transform: rotateY(-12deg); }
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.rotate-y-12 {
+  transform: rotateY(-12deg);
+}
+
 .gradient-bg {
   background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.1), transparent 40%),
-              radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.05), transparent 40%);
+    radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.05), transparent 40%);
 }
+
 .dark .gradient-bg {
   background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.15), transparent 40%),
-              radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.1), transparent 40%);
+    radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.1), transparent 40%);
 }
 
 @keyframes tech-marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .tech-marquee {
