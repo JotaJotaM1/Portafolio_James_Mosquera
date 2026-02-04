@@ -270,4 +270,12 @@ i18n.use(initReactI18next).init({
     }
 });
 
+const updateDocumentLang = (lang: string) => {
+    if (typeof document === "undefined") return;
+    document.documentElement.lang = lang.startsWith("es") ? "es" : "en";
+};
+
+updateDocumentLang(i18n.language || "en");
+i18n.on("languageChanged", (lang) => updateDocumentLang(lang));
+
 export default i18n;
