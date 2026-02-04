@@ -47,9 +47,9 @@ const resources = {
                 viewProject: "View Project",
                 openProjectAria: "Open {{title}} project",
                 projects: {
-                    gcConstructionTitle: "GC Construction 2.0",
+                    gcConstructionTitle: "GC Construction",
                     gcConstructionDesc: "Responsive construction company landing page",
-                    fullReadyTitle: "Full Ready 2.0",
+                    fullReadyTitle: "Full Ready",
                     fullReadyDesc: "Commercial landing page with modern UI",
                     restaurantMenuTitle: "Restaurant Menu",
                     restaurantMenuDesc: "QR-based restaurant menu for mobile devices",
@@ -168,9 +168,9 @@ const resources = {
                 viewProject: "Ver proyecto",
                 openProjectAria: "Abrir proyecto {{title}}",
                 projects: {
-                    gcConstructionTitle: "GC Construction 2.0",
+                    gcConstructionTitle: "GC Construction",
                     gcConstructionDesc: "Landing responsive para empresa de construcción",
-                    fullReadyTitle: "Full Ready 2.0",
+                    fullReadyTitle: "Full Ready",
                     fullReadyDesc: "Landing comercial con UI moderna",
                     restaurantMenuTitle: "Menú de restaurante",
                     restaurantMenuDesc: "Menú con QR para móviles",

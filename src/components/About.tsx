@@ -76,7 +76,14 @@ export const About: React.FC<{ id?: string }> = ({ id }) => {
                 rel="noreferrer"
                 className="inline-flex items-center px-6 py-3 border border-slate-900 dark:border-white text-sm font-bold rounded-lg text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all"
               >
-                <span className="material-icons-outlined mr-2 text-sm">code</span> {t('about.github').toUpperCase()}
+                <img
+                  src="/images/github-svgrepo-com.svg"
+                  alt="GitHub"
+                  className="mr-2 h-6 w-6"
+                  loading="lazy"
+                  decoding="async"
+                />
+                {t('about.github').toUpperCase()}
               </a>
               <a
                 href="https://www.linkedin.com/in/john-james-mosquera-rozo-4b22bb229/"
@@ -84,7 +91,14 @@ export const About: React.FC<{ id?: string }> = ({ id }) => {
                 rel="noreferrer"
                 className="inline-flex items-center px-6 py-3 border border-slate-900 dark:border-white text-sm font-bold rounded-lg text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all"
               >
-                <span className="material-icons-outlined mr-2 text-sm">work</span> {t('about.linkedin').toUpperCase()}
+                <img
+                  src="/images/linkedin-svgrepo-com.svg"
+                  alt="LinkedIn"
+                  className="mr-2 h-6 w-6"
+                  loading="lazy"
+                  decoding="async"
+                />
+                {t('about.linkedin').toUpperCase()}
               </a>
               <a
                 href={cvHref}
