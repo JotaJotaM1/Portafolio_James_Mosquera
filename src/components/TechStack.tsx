@@ -10,7 +10,7 @@ const techs = [
   { name: "Tailwind CSS", icon: "/images/tailwind.svg" },
   { name: "HTML5", icon: "/images/html-5-svgrepo-com.svg" },
   { name: "SEO", icon: "/images/seo-3-svgrepo-com.svg" },
-  { name: "Web Performance", icon: "/images/efficiency-performance-speedometer-web-performance-speed-dashboard-svgrepo-com.svg" },
+  { name: "Web Performance", icon: "/images/efficiency-performance.svg" },
   { name: "Node.js", icon: "/images/nodejs.svg" },
   { name: "Git / GitHub", icon: "/images/github-svgrepo-com.svg" },
   { name: "Figma", icon: "/images/figma.svg" },
@@ -47,9 +47,7 @@ export const TechStack: React.FC = () => {
                 loading="lazy"
                 decoding="async"
               />
-              <span className="tracking-wide">
-                {tech.name.toUpperCase()}
-              </span>
+              <span className="tracking-wide">{tech.name.toUpperCase()}</span>
             </span>
           ))}
         </div>

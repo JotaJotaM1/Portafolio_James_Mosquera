@@ -41,9 +41,7 @@ export const Footer: React.FC = () => {
           </a>
         </div>
         <div>
-          <p className="text-xs text-slate-500">
-            {t("footer.rights")}
-          </p>
+          <p className="text-xs text-slate-500">{t("footer.rights")}</p>
         </div>
       </div>
     </footer>

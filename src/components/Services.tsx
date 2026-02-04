@@ -2,12 +2,36 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const services = [
-  { icon: "code", titleKey: "services.items.uiTitle", descKey: "services.items.uiDesc" },
-  { icon: "layers", titleKey: "services.items.dsTitle", descKey: "services.items.dsDesc" },
-  { icon: "speed", titleKey: "services.items.perfTitle", descKey: "services.items.perfDesc" },
-  { icon: "search", titleKey: "services.items.seoTitle", descKey: "services.items.seoDesc" },
-  { icon: "accessibility_new", titleKey: "services.items.a11yTitle", descKey: "services.items.a11yDesc" },
-  { icon: "groups", titleKey: "services.items.collabTitle", descKey: "services.items.collabDesc" },
+  {
+    icon: "code",
+    titleKey: "services.items.uiTitle",
+    descKey: "services.items.uiDesc",
+  },
+  {
+    icon: "layers",
+    titleKey: "services.items.dsTitle",
+    descKey: "services.items.dsDesc",
+  },
+  {
+    icon: "speed",
+    titleKey: "services.items.perfTitle",
+    descKey: "services.items.perfDesc",
+  },
+  {
+    icon: "search",
+    titleKey: "services.items.seoTitle",
+    descKey: "services.items.seoDesc",
+  },
+  {
+    icon: "accessibility_new",
+    titleKey: "services.items.a11yTitle",
+    descKey: "services.items.a11yDesc",
+  },
+  {
+    icon: "groups",
+    titleKey: "services.items.collabTitle",
+    descKey: "services.items.collabDesc",
+  },
 ];
 
 export const Services: React.FC = () => {

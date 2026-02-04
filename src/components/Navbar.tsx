@@ -23,10 +23,17 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div className="flex-shrink-0 flex items-center gap-2">
-            <span className="material-icons-outlined text-primary text-3xl" aria-hidden>
+            <span
+              className="material-icons-outlined text-primary text-3xl"
+              aria-hidden
+            >
               code
             </span>
-            <a href="/" aria-label="Home - James Mosquera" className="hidden md:inline-block font-display font-bold text-2xl tracking-tight text-gray-900 dark:text-white">
+            <a
+              href="/"
+              aria-label="Home - James Mosquera"
+              className="hidden md:inline-block font-display font-bold text-2xl tracking-tight text-gray-900 dark:text-white"
+            >
               James Mosquera
             </a>
           </div>
@@ -115,7 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               aria-label={isOpen ? "Close mobile menu" : "Open mobile menu"}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
-              className={`p-2 rounded-xl ${darkMode ? 'text-white' : 'text-black'} active:bg-transparent focus:bg-transparent`}
+              className={`p-2 rounded-xl ${darkMode ? "text-white" : "text-black"} active:bg-transparent focus:bg-transparent`}
             >
               <span className="material-icons-outlined text-3xl">
                 {isOpen ? "close" : "menu"}
@@ -129,7 +136,9 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
         id="mobile-menu"
         className={`md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md transition-all duration-300 ease-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}
       >
-        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 transition-transform duration-300 ease-out ${isOpen ? "translate-y-0" : "-translate-y-2"}`}>
+        <div
+          className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 transition-transform duration-300 ease-out ${isOpen ? "translate-y-0" : "-translate-y-2"}`}
+        >
           <div className="flex flex-col gap-2">
             <a
               href="#work"
