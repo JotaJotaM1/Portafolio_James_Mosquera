@@ -95,6 +95,8 @@ const resources = {
                 subtitle: "Have a project in mind or just want to say hi? Feel free to send me a message.",
                 ctaTitle: "Ready to bring your next idea to life?",
                 ctaBody: "I help brands and startups build fast, accessible, and beautiful web experiences. Tell me about your project and I’ll get back to you quickly.",
+                copyEmail: "Copy email",
+                copyEmailCopied: "Copied",
                 form: {
                     name: "Name",
                     email: "Email",
@@ -104,13 +106,16 @@ const resources = {
                     emailPlaceholder: "john@example.com",
                     subjectPlaceholder: "Project Inquiry",
                     messagePlaceholder: "Tell me about your project...",
-                    submit: "Send Message"
+                    submit: "Send Message",
+                    sending: "Sending..."
                 },
                 validation: {
                     required: "This field is required.",
                     email: "Please enter a valid email address."
                 },
-                status: "Message sent (demo). Thank you — I will get back to you soon."
+                status: "Message sent. Thank you — I will get back to you soon.",
+                statusDemo: "Demo: form validation only. Email delivery is not enabled yet.",
+                statusError: "Something went wrong. Please try again."
             },
             footer: {
                 rights: "© 2026 James Mosquera. All rights reserved."
@@ -216,6 +221,8 @@ const resources = {
                 subtitle: "¿Tienes un proyecto en mente o solo quieres saludar? Envíame un mensaje.",
                 ctaTitle: "¿Listo para dar vida a tu próxima idea?",
                 ctaBody: "Ayudo a marcas y startups a construir experiencias web rápidas, accesibles y atractivas. Cuéntame tu proyecto y te responderé pronto.",
+                copyEmail: "Copiar correo",
+                copyEmailCopied: "Copiado",
                 form: {
                     name: "Nombre",
                     email: "Email",
@@ -225,13 +232,16 @@ const resources = {
                     emailPlaceholder: "juan@ejemplo.com",
                     subjectPlaceholder: "Consulta de proyecto",
                     messagePlaceholder: "Cuéntame sobre tu proyecto...",
-                    submit: "Enviar mensaje"
+                    submit: "Enviar mensaje",
+                    sending: "Enviando..."
                 },
                 validation: {
                     required: "Este campo es obligatorio.",
                     email: "Ingresa un email válido."
                 },
-                status: "Mensaje enviado (demo). Gracias — te responderé pronto."
+                status: "Mensaje enviado. Gracias — te responderé pronto.",
+                statusDemo: "Demo: solo validación de formulario. El envío de email aún no está habilitado.",
+                statusError: "Algo salió mal. Inténtalo de nuevo."
             },
             footer: {
                 rights: "© 2026 James Mosquera. Todos los derechos reservados."

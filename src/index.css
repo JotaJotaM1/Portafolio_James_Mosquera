@@ -96,3 +96,13 @@
     transform: translateX(0);
   }
 }
+
+/* Fix autofill background/text in dark mode */
+.dark input:-webkit-autofill,
+.dark textarea:-webkit-autofill,
+.dark select:-webkit-autofill {
+  -webkit-text-fill-color: #ffffff;
+  box-shadow: 0 0 0px 1000px #0f172a inset;
+  caret-color: #ffffff;
+  transition: background-color 9999s ease-in-out 0s;
+}

@@ -3,14 +3,26 @@ import { useTranslation } from "react-i18next";
 
 export const Contact: React.FC<{ id?: string }> = ({ id }) => {
   const { t } = useTranslation();
-  const [form, setForm] = useState({
+  const isDemo = true;
+  const [emailCopied, setEmailCopied] = useState(false);
+  const emailUser = "johnjamesmosquera3";
+  const emailDomain = "gmail";
+  const emailTld = "com";
+  const emailAddress = `${emailUser}@${emailDomain}.${emailTld}`;
+  const emptyForm = {
     name: "",
     email: "",
     subject: "",
     message: "",
-  });
+    company: "",
+  };
+  const [form, setForm] = useState(emptyForm);
   const [errors, setErrors] = useState<{ [k: string]: string }>({});
-  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+  const [statusKey, setStatusKey] = useState<
+    "status" | "statusDemo" | "statusError" | null
+  >(null);
+  const [statusType, setStatusType] = useState<"success" | "error" | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -18,7 +30,8 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
     const { name, value } = e.target;
     setForm((s) => ({ ...s, [name]: value }));
     setErrors((s) => ({ ...s, [name]: "" }));
-    setStatusMessage(null);
+    setStatusKey(null);
+    setStatusType(null);
   };
 
   const validate = () => {
@@ -37,16 +50,66 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
     setErrors(validate());
   }, [t]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const resetForm = () => setForm(emptyForm);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const next = validate();
     setErrors(next);
     if (Object.keys(next).length === 0) {
-      setStatusMessage(t("contact.status"));
-      // Aquí puedes enviar `form` a tu API/servicio.
-      setForm({ name: "", email: "", subject: "", message: "" });
+      if (isDemo) {
+        setStatusKey("statusDemo");
+        setStatusType("success");
+        resetForm();
+        return;
+      }
+      setIsSubmitting(true);
+      setStatusKey(null);
+      setStatusType(null);
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        });
+
+        if (!response.ok) {
+          throw new Error("Request failed");
+        }
+
+        setStatusKey("status");
+        setStatusType("success");
+        resetForm();
+      } catch (error) {
+        setStatusKey("statusError");
+        setStatusType("error");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
+
+  const handleCopyEmail = async () => {
+    const email = emailAddress;
+    try {
+      await navigator.clipboard.writeText(email);
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    } catch {
+      const textarea = document.createElement("textarea");
+      textarea.value = email;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    }
+  };
+
 
   return (
     <section id={id} className="py-24 bg-slate-50 dark:bg-slate-900/50">
@@ -70,12 +133,47 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
               <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-2xl">
                 {t("contact.ctaBody")}
               </p>
+              <div className="mt-6 inline-flex flex-wrap items-center gap-3 rounded-xl border border-slate-200/80 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-900/50 px-4 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200">
+                <img
+                  src="/images/gmail-old-svgrepo-com.svg"
+                  alt="Gmail"
+                  className="h-5 w-5"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>{emailAddress}</span>
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  className="ml-auto inline-flex items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/60 px-3 py-1.5 text-xs font-bold tracking-wide text-slate-700 dark:text-slate-200 hover:text-primary hover:border-primary/40 transition-colors"
+                >
+                  <span className="material-icons-outlined text-sm">content_copy</span>
+                  {emailCopied
+                    ? t("contact.copyEmailCopied")
+                    : t("contact.copyEmail")}
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
           <form className="space-y-8" onSubmit={handleSubmit} noValidate>
+            <div
+              className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden"
+              aria-hidden="true"
+            >
+              <label htmlFor="contact-company">Company</label>
+              <input
+                id="contact-company"
+                name="company"
+                type="text"
+                value={form.company}
+                onChange={handleChange}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
                 <label
@@ -204,14 +302,17 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
             </div>
             <button
               type="submit"
-              className="w-full py-5 px-6 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1 active:scale-95"
+              disabled={isSubmitting}
+              className="w-full py-5 px-6 rounded-xl bg-primary hover:bg-primary-hover disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold text-lg shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1 active:scale-95"
             >
-              {t("contact.form.submit")}
+              {isSubmitting ? t("contact.form.sending") : t("contact.form.submit")}
             </button>
 
-            {statusMessage && (
-              <div className="mt-4 rounded-md bg-green-50 border border-green-200 p-4 text-sm text-green-800 text-center">
-                {statusMessage}
+            {statusKey && (
+              <div
+                className={`mt-4 rounded-md border p-4 text-sm text-center ${statusType === "error" ? "bg-red-50 border-red-200 text-red-800" : "bg-green-50 border-green-200 text-green-800"}`}
+              >
+                {t(`contact.${statusKey}`)}
               </div>
             )}
           </form>
