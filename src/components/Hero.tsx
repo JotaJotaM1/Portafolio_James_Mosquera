@@ -51,7 +51,10 @@ export const Hero: React.FC = () => {
               </div>
               <div className="flex gap-4 mb-6">
                 <div className="w-1/3 h-32 bg-slate-100 dark:bg-slate-900/50 rounded-xl relative overflow-hidden flex items-center justify-center">
-                  <span className="material-icons-outlined text-primary text-4xl">
+                  <span
+                    className="material-icons-outlined text-primary text-4xl"
+                    aria-hidden="true"
+                  >
                     pie_chart
                   </span>
                 </div>
@@ -60,7 +63,10 @@ export const Hero: React.FC = () => {
                     <div className="text-[10px] text-slate-400 uppercase tracking-wider">
                       {t("hero.projectStatus")}
                     </div>
-                    <span className="material-icons-outlined text-white text-sm">
+                    <span
+                      className="material-icons-outlined text-white text-sm"
+                      aria-hidden="true"
+                    >
                       more_horiz
                     </span>
                   </div>
@@ -83,7 +89,7 @@ export const Hero: React.FC = () => {
                     <div
                       className={`h-10 w-10 rounded-full flex items-center justify-center ${i === 1 ? "bg-purple-100 text-primary" : "bg-blue-100 text-blue-500"}`}
                     >
-                      <span className="material-icons-outlined">
+                      <span className="material-icons-outlined" aria-hidden="true">
                         {i === 1 ? "code" : "widgets"}
                       </span>
                     </div>
@@ -98,7 +104,10 @@ export const Hero: React.FC = () => {
                 className="absolute -right-8 top-1/2 transform -translate-y-1/2 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 animate-bounce"
                 style={{ animationDuration: "3s" }}
               >
-                <span className="material-icons-outlined text-3xl text-primary">
+                <span
+                  className="material-icons-outlined text-3xl text-primary"
+                  aria-hidden="true"
+                >
                   terminal
                 </span>
               </div>

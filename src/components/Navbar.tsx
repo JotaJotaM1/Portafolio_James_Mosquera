@@ -19,9 +19,10 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   };
 
   return (
-    <nav className="fixed w-full z-50 top-0 border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
+    <nav className="fixed w-full z-50 top-4">
+      <div className="max-w-none 2xl:max-w-[90rem] mx-auto px-2 sm:px-4 lg:px-8">
+        <div className="rounded-xl border border-gray-200/80 dark:border-gray-800/80 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-lg shadow-slate-900/10">
+          <div className="flex justify-between h-16 items-center px-6">
           <div className="flex-shrink-0 flex items-center gap-2">
             <span
               className="material-icons-outlined text-primary text-3xl"
@@ -129,38 +130,41 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               </span>
             </button>
           </div>
+          </div>
         </div>
       </div>
       {/* Mobile menu */}
-      <div
-        id="mobile-menu"
-        className={`md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md transition-all duration-300 ease-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}
-      >
+      <div className="md:hidden max-w-none 2xl:max-w-[90rem] mx-auto px-2 sm:px-4 lg:px-8">
         <div
-          className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 transition-transform duration-300 ease-out ${isOpen ? "translate-y-0" : "-translate-y-2"}`}
+          id="mobile-menu"
+          className={`mt-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md transition-all duration-300 ease-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}
         >
-          <div className="flex flex-col gap-2">
-            <a
-              href="#work"
-              onClick={handleClose}
-              className="px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 active:bg-transparent focus:bg-transparent"
-            >
-              {t("nav.work")}
-            </a>
-            <a
-              href="#about"
-              onClick={handleClose}
-              className="px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 active:bg-transparent focus:bg-transparent"
-            >
-              {t("nav.about")}
-            </a>
-            <a
-              href="#contact"
-              onClick={handleClose}
-              className="inline-flex self-start px-4 py-3 rounded-xl text-sm font-semibold text-white bg-primary hover:bg-primary-hover transition-colors shadow-lg shadow-primary/30"
-            >
-              {t("nav.contact")}
-            </a>
+          <div
+            className={`px-4 py-4 transition-transform duration-300 ease-out ${isOpen ? "translate-y-0" : "-translate-y-2"}`}
+          >
+            <div className="flex flex-col gap-2">
+              <a
+                href="#work"
+                onClick={handleClose}
+                className="px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 active:bg-transparent focus:bg-transparent"
+              >
+                {t("nav.work")}
+              </a>
+              <a
+                href="#about"
+                onClick={handleClose}
+                className="px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 active:bg-transparent focus:bg-transparent"
+              >
+                {t("nav.about")}
+              </a>
+              <a
+                href="#contact"
+                onClick={handleClose}
+                className="inline-flex self-start px-4 py-3 rounded-xl text-sm font-semibold text-white bg-primary hover:bg-primary-hover transition-colors shadow-lg shadow-primary/30"
+              >
+                {t("nav.contact")}
+              </a>
+            </div>
           </div>
         </div>
       </div>
