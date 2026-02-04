@@ -2,7 +2,9 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from "react-i18next";
 
 export const About: React.FC<{ id?: string }> = ({ id }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isSpanish = i18n.language?.startsWith("es");
+  const cvHref = isSpanish ? "/james-mosquera-cv-es.pdf" : "/james-mosquera-cv-en.pdf";
   const statsRef = useRef<HTMLDivElement | null>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [counts, setCounts] = useState({ experience: 0, projects: 0, clients: 0 });
@@ -85,7 +87,8 @@ export const About: React.FC<{ id?: string }> = ({ id }) => {
                 <span className="material-icons-outlined mr-2 text-sm">work</span> {t('about.linkedin').toUpperCase()}
               </a>
               <a
-                href="/james-mosquera-cv.pdf"
+                href={cvHref}
+                download
                 className="inline-flex items-center px-6 py-3 border border-transparent text-sm font-bold rounded-lg text-white bg-primary hover:bg-primary-hover shadow-lg shadow-primary/30 transition-all"
               >
                 <span className="material-icons-outlined mr-2 text-sm">download</span> {t('about.downloadCv').toUpperCase()}
