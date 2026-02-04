@@ -159,6 +159,9 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
 
         <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
           <form className="space-y-8" onSubmit={handleSubmit} noValidate>
+            <div className="rounded-xl border border-primary/20 bg-primary/10 px-4 py-3 text-xs font-semibold uppercase tracking-widest text-primary">
+              {t("contact.formDemoNote")}
+            </div>
             <div
               className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden"
               aria-hidden="true"

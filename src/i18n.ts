@@ -97,6 +97,7 @@ const resources = {
                 ctaBody: "I help brands and startups build fast, accessible, and beautiful web experiences. Tell me about your project and I’ll get back to you quickly.",
                 copyEmail: "Copy email",
                 copyEmailCopied: "Copied",
+                formDemoNote: "Demo form — validation only (no email delivery).",
                 form: {
                     name: "Name",
                     email: "Email",
@@ -223,6 +224,7 @@ const resources = {
                 ctaBody: "Ayudo a marcas y startups a construir experiencias web rápidas, accesibles y atractivas. Cuéntame tu proyecto y te responderé pronto.",
                 copyEmail: "Copiar correo",
                 copyEmailCopied: "Copiado",
+                formDemoNote: "Formulario demo — solo validación (sin envío de email).",
                 form: {
                     name: "Nombre",
                     email: "Email",
