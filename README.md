@@ -26,7 +26,7 @@ https://portafolio-james-mosquera.vercel.app
 - i18next
 - react-i18next
 - Resend (servicio de envío de emails, modo DEMO)
-- Node.js / npm (requisitos de ejecución)
+- Node.js / npm (requisitos de ejecución).
 
 ## Instalación y uso local
 
