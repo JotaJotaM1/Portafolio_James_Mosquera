@@ -15,8 +15,18 @@ https://portafolio-james-mosquera.vercel.app
 - React
 - TypeScript
 - Vite
+- Vercel (despliegue)
+- @vercel/speed-insights
+- Google Search Console
 - Tailwind CSS
+- @tailwindcss/forms
 - PostCSS
+- Autoprefixer
+- @vitejs/plugin-react
+- i18next
+- react-i18next
+- Resend (servicio de envío de emails, modo DEMO)
+- Node.js / npm (requisitos de ejecución)
 
 ## Instalación y uso local
 
