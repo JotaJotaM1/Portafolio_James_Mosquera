@@ -133,25 +133,27 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
               <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-2xl">
                 {t("contact.ctaBody")}
               </p>
-              <div className="mt-6 inline-flex flex-wrap items-center gap-3 rounded-xl border border-slate-200/80 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-900/50 px-4 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200">
-                <img
-                  src="/images/gmail-old-svgrepo-com.svg"
-                  alt="Gmail"
-                  className="h-5 w-5"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>{emailAddress}</span>
-                <button
-                  type="button"
-                  onClick={handleCopyEmail}
-                  className="ml-auto inline-flex items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/60 px-3 py-1.5 text-xs font-bold tracking-wide text-slate-700 dark:text-slate-200 hover:text-primary hover:border-primary/40 transition-colors"
-                >
-                  <span className="material-icons-outlined text-sm">content_copy</span>
-                  {emailCopied
-                    ? t("contact.copyEmailCopied")
-                    : t("contact.copyEmail")}
-                </button>
+              <div className="mt-6 rounded-2xl border border-slate-200/80 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-900/50 px-4 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200">
+                <div className="flex flex-col md:flex-row items-center gap-3">
+                  <div className="flex items-center gap-3 min-w-0 w-full md:w-auto">
+                    <img
+                      src="/images/gmail-old-svgrepo-com.svg"
+                      alt="Gmail"
+                      className="h-5 w-5 flex-shrink-0"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <span className="truncate">{emailAddress}</span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleCopyEmail}
+                    className="w-auto md:w-auto mt-3 md:mt-0 inline-flex items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/60 px-3 py-1.5 text-xs font-bold tracking-wide text-slate-700 dark:text-slate-200 hover:text-primary hover:border-primary/40 transition-colors"
+                  >
+                    <span className="material-icons-outlined text-sm">content_copy</span>
+                    {emailCopied ? t("contact.copyEmailCopied") : t("contact.copyEmail")}
+                  </button>
+                </div>
               </div>
             </div>
           </div>

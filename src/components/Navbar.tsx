@@ -19,8 +19,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   };
 
   return (
-    <nav className="fixed w-full z-50 top-4">
-      <div className="max-w-none 2xl:max-w-[90rem] mx-auto px-2 sm:px-4 lg:px-8">
+    <nav className="fixed w-full z-50 top-1">
+      <div className="max-w-none 2xl:max-w-[90rem] mx-auto px-1 sm:px-4 lg:px-8">
         <div className="rounded-xl border border-gray-200/80 dark:border-gray-800/80 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-lg shadow-slate-900/10">
           <div className="flex justify-between h-16 items-center px-6">
           <div className="flex-shrink-0 flex items-center gap-2">
