@@ -33,12 +33,12 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             <a
               href="/"
               aria-label="Home - James Mosquera"
-              className="hidden md:inline-block font-display font-bold text-2xl tracking-tight text-gray-900 dark:text-white"
+              className="hidden lg:inline-block font-display font-bold text-2xl tracking-tight text-gray-900 dark:text-white"
             >
               James Mosquera
             </a>
           </div>
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden lg:flex space-x-8 items-center">
             <a
               className="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
               href="#work"
@@ -87,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               </span>
             </button>
           </div>
-          <div className="md:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2">
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-xl text-slate-500 dark:text-slate-400 transition-colors active:bg-transparent focus:bg-transparent"
@@ -134,7 +134,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
         </div>
       </div>
       {/* Mobile menu */}
-      <div className="md:hidden max-w-none 2xl:max-w-[90rem] mx-auto px-2 sm:px-4 lg:px-8">
+      <div className="lg:hidden max-w-none 2xl:max-w-[90rem] mx-auto px-2 sm:px-4 lg:px-8">
         <div
           id="mobile-menu"
           className={`mt-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md transition-all duration-300 ease-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}
@@ -142,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
           <div
             className={`px-4 py-4 transition-transform duration-300 ease-out ${isOpen ? "translate-y-0" : "-translate-y-2"}`}
           >
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 text-right">
               <a
                 href="#work"
                 onClick={handleClose}
@@ -160,7 +160,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               <a
                 href="#contact"
                 onClick={handleClose}
-                className="inline-flex self-start px-4 py-3 rounded-xl text-sm font-semibold text-white bg-primary hover:bg-primary-hover transition-colors shadow-lg shadow-primary/30"
+                className="inline-flex self-end px-4 py-3 rounded-xl text-sm font-semibold text-white bg-primary hover:bg-primary-hover transition-colors shadow-lg shadow-primary/30"
               >
                 {t("nav.contact")}
               </a>
