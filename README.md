@@ -2,7 +2,7 @@
 
 Portfolio personal para presentar proyectos, stack técnico y contacto profesional. Enfocado en UI pixel-perfect, performance y accesibilidad.
 
-## Demo
+## Sitio en producción
 
 https://portafolio-james-mosquera.vercel.app
 
