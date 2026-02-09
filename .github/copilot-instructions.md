@@ -108,3 +108,25 @@ Una tarea está completa solo si:
 - No introduce deuda técnica innecesaria.
 - Mantiene consistencia visual y de Tailwind.
 - Respeta i18n y estructura del proyecto.
+
+## Blog (Astro – manejo obligatorio)
+- Todo lo relacionado con el **blog se gestiona exclusivamente con Astro**.
+- Usa **Astro components (.astro)** como primera opción.
+- Prioriza **renderizado estático (SSG)** para SEO y performance.
+- Evita usar React en el blog salvo que sea estrictamente necesario (islas interactivas).
+- Mantén el blog:
+  - altamente semántico (`article`, `header`, `time`, `section`)
+  - accesible por defecto
+  - optimizado para SEO (titles únicos, descriptions, schema si aplica)
+- Usa **Markdown / MDX** siguiendo la estructura existente del proyecto.
+- En cada post, incluye frontmatter con `title`, `description`, `pubDate`, `tags` y `image`.
+- Respeta:
+  - rutas limpias (`/blog/slug`)
+  - canonical correcto por post
+  - Open Graph y Twitter Card por página
+- Imágenes optimizadas y coherentes con el estilo del portfolio (nada stock genérico).
+- No dupliques lógica del blog en React.
+- El blog debe ser:
+  - simple
+  - rápido
+  - orientado a posicionamiento y lectura
