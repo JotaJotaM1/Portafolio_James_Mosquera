@@ -5,6 +5,7 @@ import { TechStack } from "./components/TechStack";
 import { Work } from "./components/Work";
 import { Services } from "./components/Services";
 import { About } from "./components/About";
+import { Faq } from "./components/Faq";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
@@ -47,6 +48,7 @@ const App: React.FC = () => {
         <Work id="work" />
         <Services />
         <About id="about" />
+        <Faq id="faq" />
         <Contact id="contact" />
       </main>
       <Footer />

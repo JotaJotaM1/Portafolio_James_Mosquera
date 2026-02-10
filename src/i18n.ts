@@ -90,6 +90,68 @@ const resources = {
                     collabDesc: "Working closely with designers and back-end teams to deliver cohesive products."
                 }
             },
+            faq: {
+                title: "FAQ",
+                subtitle: "Quick answers for recruiters and clients.",
+                recruiters: {
+                    title: "FAQ for recruiters",
+                    items: [
+                        {
+                            q: "What level do you consider yourself as a Front-End Developer?",
+                            a: "I consider myself mid-level. I have real project experience and focus on quality, accessibility, and performance."
+                        },
+                        {
+                            q: "What technologies do you mainly work with?",
+                            a: "React, TypeScript, Tailwind, Vite, and Astro for content and SEO. I integrate REST APIs and optimize performance."
+                        },
+                        {
+                            q: "Do you have production experience?",
+                            a: "Yes. I have shipped real sites and apps and understand delivery and maintenance."
+                        },
+                        {
+                            q: "How important are accessibility and SEO to you?",
+                            a: "Very. I apply semantic HTML, WCAG practices, and technical SEO from day one."
+                        },
+                        {
+                            q: "Have you worked with design (Figma, handoff, pixel-perfect)?",
+                            a: "Yes. I collaborate with Figma handoffs and implement UIs with precision."
+                        },
+                        {
+                            q: "Are you looking for junior, mid, or freelance roles?",
+                            a: "I am open to mid roles and freelance projects with real impact."
+                        }
+                    ]
+                },
+                clients: {
+                    title: "FAQ for clients",
+                    items: [
+                        {
+                            q: "What kind of projects do you accept?",
+                            a: "Landing pages, portfolios, corporate sites, and conversion-focused web interfaces."
+                        },
+                        {
+                            q: "Do you work with WordPress or only React?",
+                            a: "My main stack is React and Astro, but I can work with WordPress when needed."
+                        },
+                        {
+                            q: "Do you do only frontend or also technical SEO?",
+                            a: "Frontend plus basic technical SEO: semantics, metadata, structure, and performance."
+                        },
+                        {
+                            q: "Do you offer maintenance or only initial build?",
+                            a: "Both. I can deliver and provide ongoing support."
+                        },
+                        {
+                            q: "What is your working process with clients?",
+                            a: "Clear brief, defined scope, milestone-based delivery, and constant communication."
+                        },
+                        {
+                            q: "Why does this portfolio include a FAQ?",
+                            a: "Because frontend is not just code, it is about communicating solutions clearly."
+                        }
+                    ]
+                }
+            },
             contact: {
                 title: "Let's Work Together",
                 subtitle: "Have a project in mind or just want to say hi? Feel free to send me a message.",
@@ -215,6 +277,68 @@ const resources = {
                     a11yDesc: "Interfaces con WCAG, soporte a lectores de pantalla e inclusión.",
                     collabTitle: "Colaboración",
                     collabDesc: "Trabajo cercano con diseño y back-end para un producto sólido."
+                }
+            },
+            faq: {
+                title: "FAQ",
+                subtitle: "Respuestas rápidas para reclutadores y clientes.",
+                recruiters: {
+                    title: "FAQ para reclutadores",
+                    items: [
+                        {
+                            q: "¿En qué nivel te consideras como Front-End Developer?",
+                            a: "Me considero perfil mid. He trabajado en proyectos reales, con foco en calidad, accesibilidad y rendimiento."
+                        },
+                        {
+                            q: "¿Con qué tecnologías trabajas principalmente?",
+                            a: "React, TypeScript, Tailwind, Vite y Astro para contenido y SEO. Integro APIs REST y cuido el rendimiento."
+                        },
+                        {
+                            q: "¿Tienes experiencia con proyectos en producción?",
+                            a: "Sí. He desplegado sitios y apps reales, y entiendo el ciclo completo de entrega y mantenimiento."
+                        },
+                        {
+                            q: "¿Qué importancia le das a la accesibilidad y al SEO?",
+                            a: "Alta. Uso HTML semántico, prácticas WCAG y SEO técnico desde el inicio, no al final."
+                        },
+                        {
+                            q: "¿Has trabajado con diseño (Figma, handoff, pixel-perfect)?",
+                            a: "Sí. Trabajo con Figma y handoff, y puedo implementar interfaces con precisión."
+                        },
+                        {
+                            q: "¿Buscas un rol junior, mid o freelance?",
+                            a: "Estoy abierto a roles mid y proyectos freelance con impacto real."
+                        }
+                    ]
+                },
+                clients: {
+                    title: "FAQ para clientes",
+                    items: [
+                        {
+                            q: "¿Qué tipo de proyectos aceptas?",
+                            a: "Landings, portfolios, sitios corporativos e interfaces web enfocadas en conversión."
+                        },
+                        {
+                            q: "¿Trabajas con WordPress o solo con React?",
+                            a: "Mi stack principal es React y Astro, pero puedo integrarme a WordPress si el proyecto lo necesita."
+                        },
+                        {
+                            q: "¿Haces solo frontend o también SEO técnico?",
+                            a: "Frontend + SEO técnico básico: semántica, metadatos, estructura y performance."
+                        },
+                        {
+                            q: "¿Ofreces mantenimiento o solo desarrollo inicial?",
+                            a: "Ambos. Puedo entregar el proyecto y dar soporte evolutivo."
+                        },
+                        {
+                            q: "¿Cómo es tu forma de trabajar con clientes?",
+                            a: "Brief claro, alcance definido, entregas por hitos y comunicación constante."
+                        },
+                        {
+                            q: "¿Por qué este portfolio tiene un FAQ?",
+                            a: "Porque el frontend no es solo escribir código: es comunicar soluciones con claridad."
+                        }
+                    ]
                 }
             },
             contact: {
