@@ -135,7 +135,7 @@ const resources = {
                         },
                         {
                             q: "Do you do only frontend or also technical SEO?",
-                            a: "Frontend plus basic technical SEO: semantics, metadata, structure, and performance."
+                            a: "Frontend + SEO: semantics, metadata, structure, and performance."
                         },
                         {
                             q: "Do you offer maintenance or only initial build?",
@@ -324,7 +324,7 @@ const resources = {
                         },
                         {
                             q: "¿Haces solo frontend o también SEO técnico?",
-                            a: "Frontend + SEO técnico básico: semántica, metadatos, estructura y performance."
+                            a: "Frontend + SEO: semántica, metadatos, estructura y performance."
                         },
                         {
                             q: "¿Ofreces mantenimiento o solo desarrollo inicial?",
