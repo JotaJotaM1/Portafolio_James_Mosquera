@@ -56,9 +56,7 @@ export const Faq: React.FC<{ id?: string }> = ({ id }) => {
         }}
         className="group rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 transition-colors hover:border-primary/40"
       >
-        <summary
-          className="cursor-pointer list-none text-left text-base font-semibold text-slate-900 dark:text-white marker:hidden"
-        >
+        <summary className="cursor-pointer list-none text-left text-base font-semibold text-slate-900 dark:text-white marker:hidden">
           <span className="flex items-start justify-between gap-4">
             <span>{item.q}</span>
             <span
