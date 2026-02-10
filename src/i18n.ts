@@ -118,7 +118,7 @@ const resources = {
                         },
                         {
                             q: "Are you looking for junior, mid, or freelance roles?",
-                            a: "I am open to mid roles and freelance projects with real impact."
+                            a: "I am open to junior and mid roles, and freelance projects with real impact."
                         }
                     ]
                 },
@@ -307,7 +307,7 @@ const resources = {
                         },
                         {
                             q: "¿Buscas un rol junior, mid o freelance?",
-                            a: "Estoy abierto a roles mid y proyectos freelance con impacto real."
+                            a: "Estoy abierto a roles junior, mid y proyectos freelance con impacto real."
                         }
                     ]
                 },
