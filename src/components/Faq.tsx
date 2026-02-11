@@ -61,15 +61,15 @@ export const Faq: React.FC<{ id?: string }> = ({ id }) => {
             <span>{item.q}</span>
             <span
               aria-hidden="true"
-              className="material-icons-outlined text-primary transition-transform duration-300 group-open:rotate-45"
+              className="material-icons-outlined text-primary transition-transform duration-500 ease-in-out group-open:rotate-45"
             >
               add
             </span>
           </span>
         </summary>
-        <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-open:grid-rows-[1fr]">
+        <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out group-open:grid-rows-[1fr]">
           <div className="overflow-hidden">
-            <p className="pt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300 transition-all duration-300 ease-out opacity-0 translate-y-1 group-open:opacity-100 group-open:translate-y-0">
+            <p className="pt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300 transition-all duration-500 ease-in-out opacity-0 translate-y-2 group-open:opacity-100 group-open:translate-y-0">
               {item.a}
             </p>
           </div>
