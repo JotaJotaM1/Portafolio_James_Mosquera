@@ -123,10 +123,11 @@ export const Work: React.FC<{ id?: string }> = ({ id }) => {
     <section
       id={id}
       className="py-24 bg-background-light dark:bg-background-dark"
+      aria-labelledby="work-title"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2 id="work-title" className="font-display text-4xl font-bold text-slate-900 dark:text-white mb-4">
             {t("work.title")}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">

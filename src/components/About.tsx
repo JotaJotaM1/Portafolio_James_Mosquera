@@ -82,11 +82,11 @@ export const About: React.FC<{ id?: string }> = ({ id }) => {
     return () => observer.disconnect();
   }, [hasAnimated]);
   return (
-    <section id={id} className="py-24 overflow-hidden">
+    <section id={id} className="py-24 overflow-hidden" aria-labelledby="about-title">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
-            <h2 className="font-display text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white uppercase tracking-tight">
+            <h2 id="about-title" className="font-display text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white uppercase tracking-tight">
               {t("about.title")}
             </h2>
             <div className="space-y-6 text-slate-600 dark:text-slate-400 leading-relaxed text-lg">

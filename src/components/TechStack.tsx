@@ -24,12 +24,12 @@ export const TechStack: React.FC = () => {
       aria-labelledby="techstack-title"
     >
       <div className="max-w-7xl mx-auto px-4 text-center mb-10">
-        <h3
+        <h2
           id="techstack-title"
           className="text-xs font-semibold tracking-widest text-slate-500 uppercase"
         >
           {t("techstack.title")}
-        </h3>
+        </h2>
       </div>
 
       <div className="relative overflow-hidden px-4 tech-marquee-mask max-w-5xl mx-auto">

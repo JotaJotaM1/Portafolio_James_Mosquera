@@ -112,10 +112,10 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
 
 
   return (
-    <section id={id} className="py-24 bg-slate-50 dark:bg-slate-900/50">
+    <section id={id} className="py-24 bg-slate-50 dark:bg-slate-900/50" aria-labelledby="contact-title">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white uppercase mb-4 tracking-tight">
+          <h2 id="contact-title" className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white uppercase mb-4 tracking-tight">
             {t("contact.title")}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-lg">
@@ -315,7 +315,7 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
 
             {statusKey && (
               <div
-                className={`mt-4 rounded-md border p-4 text-sm text-center ${statusType === "error" ? "bg-red-50 border-red-200 text-red-800" : "bg-green-50 border-green-200 text-green-800"}`}
+                className={`mt-4 rounded-md border p-4 text-sm text-center ${statusType === "error" ? "bg-red-50 border-red-200 text-red-800 dark:bg-red-900/30 dark:border-red-800 dark:text-red-300" : "bg-green-50 border-green-200 text-green-800 dark:bg-green-900/30 dark:border-green-800 dark:text-green-300"}`}
               >
                 {t(`contact.${statusKey}`)}
               </div>

@@ -37,10 +37,10 @@ const services = [
 export const Services: React.FC = () => {
   const { t } = useTranslation();
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900/30">
+    <section className="py-24 bg-slate-50 dark:bg-slate-900/30" aria-labelledby="services-title">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2 id="services-title" className="font-display text-4xl font-bold text-slate-900 dark:text-white mb-4">
             {t("services.title")}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 uppercase tracking-widest text-xs font-bold">
@@ -54,7 +54,7 @@ export const Services: React.FC = () => {
               className="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all duration-300 group"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                <span className="material-icons-outlined text-primary group-hover:text-white">
+                <span className="material-icons-outlined text-primary group-hover:text-white" aria-hidden="true">
                   {s.icon}
                 </span>
               </div>
