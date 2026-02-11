@@ -196,6 +196,7 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
                   required
                   value={form.name}
                   onChange={handleChange}
+                  autoComplete="name"
                   aria-invalid={!!errors.name}
                   aria-describedby={
                     errors.name ? "error-contact-name" : undefined
@@ -227,6 +228,7 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
                   required
                   value={form.email}
                   onChange={handleChange}
+                  autoComplete="email"
                   aria-invalid={!!errors.email}
                   aria-describedby={
                     errors.email ? "error-contact-email" : undefined
@@ -259,6 +261,7 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
                 required
                 value={form.subject}
                 onChange={handleChange}
+                autoComplete="off"
                 aria-invalid={!!errors.subject}
                 aria-describedby={
                   errors.subject ? "error-contact-subject" : undefined
@@ -290,6 +293,7 @@ export const Contact: React.FC<{ id?: string }> = ({ id }) => {
                 required
                 value={form.message}
                 onChange={handleChange}
+                autoComplete="off"
                 aria-invalid={!!errors.message}
                 aria-describedby={
                   errors.message ? "error-contact-message" : undefined
